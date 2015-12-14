@@ -1,0 +1,32 @@
+{
+  "name": "dot",
+  "version": "1.0.0",
+  "description": "a point meal system",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LinJieLinLin/DotDotDot.git"
+  },
+  "dependencies":{    
+    "gulp": "*",
+    "gulp-cli":"*",
+    "gulp-load-plugins":"*",
+    "gulp-notify": "*",
+    "gulp-shell": "*",
+    "minimist": "^1.2.0",
+    "bower":"1.7.1"
+  },
+  "keywords": [
+    "dot",
+    "menu"
+  ],
+  "author": "HappyLinLin",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/LinJieLinLin/DotDotDot/issues"
+  },
+  "homepage": "https://github.com/LinJieLinLin/DotDotDot#readme"
+}
