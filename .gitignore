@@ -24,3 +24,7 @@ _testmain.go
 *.prof
 /www/libs
 /www/tool/node_modules
+.idea/
+DotDotDot.iml
+src/dot/www/tool
+src/dot/www/libs
