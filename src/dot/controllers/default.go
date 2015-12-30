@@ -1,9 +1,9 @@
 package controllers
 
 import (
+	. "dot/models/common"
 	"fmt"
 	"github.com/astaxie/beego"
-	. "dot/models/common"
 )
 
 type MainController struct {
@@ -19,7 +19,7 @@ func (c *MainController) Get() {
 }
 func (c *GetUser) GetUser() {
 	fmt.Println("hehe")
-	re:=Re{0,"123","success"}
+	re := Re{0, "123", "success"}
 	c.Data["json"] = re
 	c.ServeJson()
 	return
