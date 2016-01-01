@@ -1,0 +1,14 @@
+.tab {
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+}
+
+.tabtab-cur {
+  color: white;
+  background-color: rgba(255, 255, 0, 0.3);
+}

@@ -8,5 +8,11 @@ D.controller('mainCtrl', ['$scope', '$timeout', 'S', function($scope, $timeout, 
         };
         return S.R(angular.extend(option, filter || {}));
     };
-    $scope.getData({a:1});
+    // $scope.getData({a:1});
+    $scope.tabIndex = 0;
+    $scope.tabs = [{
+        name: '姓名'
+    }, {
+        name: '菜单'
+    }];
 }]);
