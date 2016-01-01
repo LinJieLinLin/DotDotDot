@@ -26,5 +26,5 @@ _testmain.go
 /www/tool/node_modules
 .idea/
 DotDotDot.iml
-src/dot/www/tool
+src/dot/www/tool/node_modules
 src/dot/www/libs
