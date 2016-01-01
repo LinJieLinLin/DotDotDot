@@ -1,0 +1,771 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$chat-active-name: 'chat-active';
+$chat-active-x: 823px;
+$chat-active-y: 579px;
+$chat-active-offset-x: -823px;
+$chat-active-offset-y: -579px;
+$chat-active-width: 29px;
+$chat-active-height: 26px;
+$chat-active-total-width: 868px;
+$chat-active-total-height: 612px;
+$chat-active-image: '/images/sprite.png';
+$chat-active: (823px, 579px, -823px, -579px, 29px, 26px, 868px, 612px, '/images/sprite.png', 'chat-active', );
+$chat-add-active-name: 'chat-add-active';
+$chat-add-active-x: 587px;
+$chat-add-active-y: 511px;
+$chat-add-active-offset-x: -587px;
+$chat-add-active-offset-y: -511px;
+$chat-add-active-width: 15px;
+$chat-add-active-height: 16px;
+$chat-add-active-total-width: 868px;
+$chat-add-active-total-height: 612px;
+$chat-add-active-image: '/images/sprite.png';
+$chat-add-active: (587px, 511px, -587px, -511px, 15px, 16px, 868px, 612px, '/images/sprite.png', 'chat-add-active', );
+$chat-add-icon-name: 'chat-add-icon';
+$chat-add-icon-x: 744px;
+$chat-add-icon-y: 507px;
+$chat-add-icon-offset-x: -744px;
+$chat-add-icon-offset-y: -507px;
+$chat-add-icon-width: 79px;
+$chat-add-icon-height: 99px;
+$chat-add-icon-total-width: 868px;
+$chat-add-icon-total-height: 612px;
+$chat-add-icon-image: '/images/sprite.png';
+$chat-add-icon: (744px, 507px, -744px, -507px, 79px, 99px, 868px, 612px, '/images/sprite.png', 'chat-add-icon', );
+$chat-add-name: 'chat-add';
+$chat-add-x: 602px;
+$chat-add-y: 511px;
+$chat-add-offset-x: -602px;
+$chat-add-offset-y: -511px;
+$chat-add-width: 15px;
+$chat-add-height: 16px;
+$chat-add-total-width: 868px;
+$chat-add-total-height: 612px;
+$chat-add-image: '/images/sprite.png';
+$chat-add: (602px, 511px, -602px, -511px, 15px, 16px, 868px, 612px, '/images/sprite.png', 'chat-add', );
+$chat-big-name: 'chat-big';
+$chat-big-x: 616px;
+$chat-big-y: 423px;
+$chat-big-offset-x: -616px;
+$chat-big-offset-y: -423px;
+$chat-big-width: 73px;
+$chat-big-height: 62px;
+$chat-big-total-width: 868px;
+$chat-big-total-height: 612px;
+$chat-big-image: '/images/sprite.png';
+$chat-big: (616px, 423px, -616px, -423px, 73px, 62px, 868px, 612px, '/images/sprite.png', 'chat-big', );
+$chat-friend-active-name: 'chat-friend-active';
+$chat-friend-active-x: 708px;
+$chat-friend-active-y: 329px;
+$chat-friend-active-offset-x: -708px;
+$chat-friend-active-offset-y: -329px;
+$chat-friend-active-width: 22px;
+$chat-friend-active-height: 22px;
+$chat-friend-active-total-width: 868px;
+$chat-friend-active-total-height: 612px;
+$chat-friend-active-image: '/images/sprite.png';
+$chat-friend-active: (708px, 329px, -708px, -329px, 22px, 22px, 868px, 612px, '/images/sprite.png', 'chat-friend-active', );
+$chat-friend-add-name: 'chat-friend-add';
+$chat-friend-add-x: 706px;
+$chat-friend-add-y: 231px;
+$chat-friend-add-offset-x: -706px;
+$chat-friend-add-offset-y: -231px;
+$chat-friend-add-width: 28px;
+$chat-friend-add-height: 23px;
+$chat-friend-add-total-width: 868px;
+$chat-friend-add-total-height: 612px;
+$chat-friend-add-image: '/images/sprite.png';
+$chat-friend-add: (706px, 231px, -706px, -231px, 28px, 23px, 868px, 612px, '/images/sprite.png', 'chat-friend-add', );
+$chat-friend-notify-name: 'chat-friend-notify';
+$chat-friend-notify-x: 692px;
+$chat-friend-notify-y: 403px;
+$chat-friend-notify-offset-x: -692px;
+$chat-friend-notify-offset-y: -403px;
+$chat-friend-notify-width: 20px;
+$chat-friend-notify-height: 18px;
+$chat-friend-notify-total-width: 868px;
+$chat-friend-notify-total-height: 612px;
+$chat-friend-notify-image: '/images/sprite.png';
+$chat-friend-notify: (692px, 403px, -692px, -403px, 20px, 18px, 868px, 612px, '/images/sprite.png', 'chat-friend-notify', );
+$chat-friend-name: 'chat-friend';
+$chat-friend-x: 708px;
+$chat-friend-y: 307px;
+$chat-friend-offset-x: -708px;
+$chat-friend-offset-y: -307px;
+$chat-friend-width: 22px;
+$chat-friend-height: 22px;
+$chat-friend-total-width: 868px;
+$chat-friend-total-height: 612px;
+$chat-friend-image: '/images/sprite.png';
+$chat-friend: (708px, 307px, -708px, -307px, 22px, 22px, 868px, 612px, '/images/sprite.png', 'chat-friend', );
+$chat-group-active-name: 'chat-group-active';
+$chat-group-active-x: 648px;
+$chat-group-active-y: 403px;
+$chat-group-active-offset-x: -648px;
+$chat-group-active-offset-y: -403px;
+$chat-group-active-width: 22px;
+$chat-group-active-height: 18px;
+$chat-group-active-total-width: 868px;
+$chat-group-active-total-height: 612px;
+$chat-group-active-image: '/images/sprite.png';
+$chat-group-active: (648px, 403px, -648px, -403px, 22px, 18px, 868px, 612px, '/images/sprite.png', 'chat-group-active', );
+$chat-group-name: 'chat-group';
+$chat-group-x: 670px;
+$chat-group-y: 403px;
+$chat-group-offset-x: -670px;
+$chat-group-offset-y: -403px;
+$chat-group-width: 22px;
+$chat-group-height: 18px;
+$chat-group-total-width: 868px;
+$chat-group-total-height: 612px;
+$chat-group-image: '/images/sprite.png';
+$chat-group: (670px, 403px, -670px, -403px, 22px, 18px, 868px, 612px, '/images/sprite.png', 'chat-group', );
+$chat-guide-active-name: 'chat-guide-active';
+$chat-guide-active-x: 708px;
+$chat-guide-active-y: 351px;
+$chat-guide-active-offset-x: -708px;
+$chat-guide-active-offset-y: -351px;
+$chat-guide-active-width: 22px;
+$chat-guide-active-height: 22px;
+$chat-guide-active-total-width: 868px;
+$chat-guide-active-total-height: 612px;
+$chat-guide-active-image: '/images/sprite.png';
+$chat-guide-active: (708px, 351px, -708px, -351px, 22px, 22px, 868px, 612px, '/images/sprite.png', 'chat-guide-active', );
+$chat-guide-name: 'chat-guide';
+$chat-guide-x: 627px;
+$chat-guide-y: 381px;
+$chat-guide-offset-x: -627px;
+$chat-guide-offset-y: -381px;
+$chat-guide-width: 22px;
+$chat-guide-height: 22px;
+$chat-guide-total-width: 868px;
+$chat-guide-total-height: 612px;
+$chat-guide-image: '/images/sprite.png';
+$chat-guide: (627px, 381px, -627px, -381px, 22px, 22px, 868px, 612px, '/images/sprite.png', 'chat-guide', );
+$chat-menu-active-name: 'chat-menu-active';
+$chat-menu-active-x: 649px;
+$chat-menu-active-y: 381px;
+$chat-menu-active-offset-x: -649px;
+$chat-menu-active-offset-y: -381px;
+$chat-menu-active-width: 22px;
+$chat-menu-active-height: 22px;
+$chat-menu-active-total-width: 868px;
+$chat-menu-active-total-height: 612px;
+$chat-menu-active-image: '/images/sprite.png';
+$chat-menu-active: (649px, 381px, -649px, -381px, 22px, 22px, 868px, 612px, '/images/sprite.png', 'chat-menu-active', );
+$chat-menu-name: 'chat-menu';
+$chat-menu-x: 671px;
+$chat-menu-y: 381px;
+$chat-menu-offset-x: -671px;
+$chat-menu-offset-y: -381px;
+$chat-menu-width: 22px;
+$chat-menu-height: 22px;
+$chat-menu-total-width: 868px;
+$chat-menu-total-height: 612px;
+$chat-menu-image: '/images/sprite.png';
+$chat-menu: (671px, 381px, -671px, -381px, 22px, 22px, 868px, 612px, '/images/sprite.png', 'chat-menu', );
+$chat-msg-active-name: 'chat-msg-active';
+$chat-msg-active-x: 715px;
+$chat-msg-active-y: 381px;
+$chat-msg-active-offset-x: -715px;
+$chat-msg-active-offset-y: -381px;
+$chat-msg-active-width: 22px;
+$chat-msg-active-height: 20px;
+$chat-msg-active-total-width: 868px;
+$chat-msg-active-total-height: 612px;
+$chat-msg-active-image: '/images/sprite.png';
+$chat-msg-active: (715px, 381px, -715px, -381px, 22px, 20px, 868px, 612px, '/images/sprite.png', 'chat-msg-active', );
+$chat-msg-icon-name: 'chat-msg-icon';
+$chat-msg-icon-x: 683px;
+$chat-msg-icon-y: 488px;
+$chat-msg-icon-offset-x: -683px;
+$chat-msg-icon-offset-y: -488px;
+$chat-msg-icon-width: 17px;
+$chat-msg-icon-height: 15px;
+$chat-msg-icon-total-width: 868px;
+$chat-msg-icon-total-height: 612px;
+$chat-msg-icon-image: '/images/sprite.png';
+$chat-msg-icon: (683px, 488px, -683px, -488px, 17px, 15px, 868px, 612px, '/images/sprite.png', 'chat-msg-icon', );
+$chat-msg-name: 'chat-msg';
+$chat-msg-x: 693px;
+$chat-msg-y: 381px;
+$chat-msg-offset-x: -693px;
+$chat-msg-offset-y: -381px;
+$chat-msg-width: 22px;
+$chat-msg-height: 20px;
+$chat-msg-total-width: 868px;
+$chat-msg-total-height: 612px;
+$chat-msg-image: '/images/sprite.png';
+$chat-msg: (693px, 381px, -693px, -381px, 22px, 20px, 868px, 612px, '/images/sprite.png', 'chat-msg', );
+$chat-recieve-request-name: 'chat-recieve-request';
+$chat-recieve-request-x: 645px;
+$chat-recieve-request-y: 488px;
+$chat-recieve-request-offset-x: -645px;
+$chat-recieve-request-offset-y: -488px;
+$chat-recieve-request-width: 19px;
+$chat-recieve-request-height: 15px;
+$chat-recieve-request-total-width: 868px;
+$chat-recieve-request-total-height: 612px;
+$chat-recieve-request-image: '/images/sprite.png';
+$chat-recieve-request: (645px, 488px, -645px, -488px, 19px, 15px, 868px, 612px, '/images/sprite.png', 'chat-recieve-request', );
+$chat-record-empty-name: 'chat-record-empty';
+$chat-record-empty-x: 689px;
+$chat-record-empty-y: 423px;
+$chat-record-empty-offset-x: -689px;
+$chat-record-empty-offset-y: -423px;
+$chat-record-empty-width: 53px;
+$chat-record-empty-height: 51px;
+$chat-record-empty-total-width: 868px;
+$chat-record-empty-total-height: 612px;
+$chat-record-empty-image: '/images/sprite.png';
+$chat-record-empty: (689px, 423px, -689px, -423px, 53px, 51px, 868px, 612px, '/images/sprite.png', 'chat-record-empty', );
+$chat-send-request-name: 'chat-send-request';
+$chat-send-request-x: 664px;
+$chat-send-request-y: 488px;
+$chat-send-request-offset-x: -664px;
+$chat-send-request-offset-y: -488px;
+$chat-send-request-width: 19px;
+$chat-send-request-height: 15px;
+$chat-send-request-total-width: 868px;
+$chat-send-request-total-height: 612px;
+$chat-send-request-image: '/images/sprite.png';
+$chat-send-request: (664px, 488px, -664px, -488px, 19px, 15px, 868px, 612px, '/images/sprite.png', 'chat-send-request', );
+$chat-serve-active-name: 'chat-serve-active';
+$chat-serve-active-x: 706px;
+$chat-serve-active-y: 254px;
+$chat-serve-active-offset-x: -706px;
+$chat-serve-active-offset-y: -254px;
+$chat-serve-active-width: 24px;
+$chat-serve-active-height: 22px;
+$chat-serve-active-total-width: 868px;
+$chat-serve-active-total-height: 612px;
+$chat-serve-active-image: '/images/sprite.png';
+$chat-serve-active: (706px, 254px, -706px, -254px, 24px, 22px, 868px, 612px, '/images/sprite.png', 'chat-serve-active', );
+$chat-serve-name: 'chat-serve';
+$chat-serve-x: 706px;
+$chat-serve-y: 276px;
+$chat-serve-offset-x: -706px;
+$chat-serve-offset-y: -276px;
+$chat-serve-width: 24px;
+$chat-serve-height: 22px;
+$chat-serve-total-width: 868px;
+$chat-serve-total-height: 612px;
+$chat-serve-image: '/images/sprite.png';
+$chat-serve: (706px, 276px, -706px, -276px, 24px, 22px, 868px, 612px, '/images/sprite.png', 'chat-serve', );
+$chat-service-name: 'chat-service';
+$chat-service-x: 730px;
+$chat-service-y: 276px;
+$chat-service-offset-x: -730px;
+$chat-service-offset-y: -276px;
+$chat-service-width: 14px;
+$chat-service-height: 13px;
+$chat-service-total-width: 868px;
+$chat-service-total-height: 612px;
+$chat-service-image: '/images/sprite.png';
+$chat-service: (730px, 276px, -730px, -276px, 14px, 13px, 868px, 612px, '/images/sprite.png', 'chat-service', );
+$chat-system-notify-name: 'chat-system-notify';
+$chat-system-notify-x: 587px;
+$chat-system-notify-y: 488px;
+$chat-system-notify-offset-x: -587px;
+$chat-system-notify-offset-y: -488px;
+$chat-system-notify-width: 20px;
+$chat-system-notify-height: 23px;
+$chat-system-notify-total-width: 868px;
+$chat-system-notify-total-height: 612px;
+$chat-system-notify-image: '/images/sprite.png';
+$chat-system-notify: (587px, 488px, -587px, -488px, 20px, 23px, 868px, 612px, '/images/sprite.png', 'chat-system-notify', );
+$chat-name: 'chat';
+$chat-x: 823px;
+$chat-y: 553px;
+$chat-offset-x: -823px;
+$chat-offset-y: -553px;
+$chat-width: 29px;
+$chat-height: 26px;
+$chat-total-width: 868px;
+$chat-total-height: 612px;
+$chat-image: '/images/sprite.png';
+$chat: (823px, 553px, -823px, -553px, 29px, 26px, 868px, 612px, '/images/sprite.png', 'chat', );
+$giraffe-name: 'giraffe';
+$giraffe-x: 744px;
+$giraffe-y: 0px;
+$giraffe-offset-x: -744px;
+$giraffe-offset-y: 0px;
+$giraffe-width: 124px;
+$giraffe-height: 436px;
+$giraffe-total-width: 868px;
+$giraffe-total-height: 612px;
+$giraffe-image: '/images/sprite.png';
+$giraffe: (744px, 0px, -744px, 0px, 124px, 436px, 868px, 612px, '/images/sprite.png', 'giraffe', );
+$guidance-chat-active-name: 'guidance-chat-active';
+$guidance-chat-active-x: 626px;
+$guidance-chat-active-y: 488px;
+$guidance-chat-active-offset-x: -626px;
+$guidance-chat-active-offset-y: -488px;
+$guidance-chat-active-width: 19px;
+$guidance-chat-active-height: 16px;
+$guidance-chat-active-total-width: 868px;
+$guidance-chat-active-total-height: 612px;
+$guidance-chat-active-image: '/images/sprite.png';
+$guidance-chat-active: (626px, 488px, -626px, -488px, 19px, 16px, 868px, 612px, '/images/sprite.png', 'guidance-chat-active', );
+$guidance-chat-name: 'guidance-chat';
+$guidance-chat-x: 712px;
+$guidance-chat-y: 403px;
+$guidance-chat-offset-x: -712px;
+$guidance-chat-offset-y: -403px;
+$guidance-chat-width: 19px;
+$guidance-chat-height: 16px;
+$guidance-chat-total-width: 868px;
+$guidance-chat-total-height: 612px;
+$guidance-chat-image: '/images/sprite.png';
+$guidance-chat: (712px, 403px, -712px, -403px, 19px, 16px, 868px, 612px, '/images/sprite.png', 'guidance-chat', );
+$guidance-course-active-name: 'guidance-course-active';
+$guidance-course-active-x: 852px;
+$guidance-course-active-y: 553px;
+$guidance-course-active-offset-x: -852px;
+$guidance-course-active-offset-y: -553px;
+$guidance-course-active-width: 16px;
+$guidance-course-active-height: 16px;
+$guidance-course-active-total-width: 868px;
+$guidance-course-active-total-height: 612px;
+$guidance-course-active-image: '/images/sprite.png';
+$guidance-course-active: (852px, 553px, -852px, -553px, 16px, 16px, 868px, 612px, '/images/sprite.png', 'guidance-course-active', );
+$guidance-course-name: 'guidance-course';
+$guidance-course-x: 852px;
+$guidance-course-y: 579px;
+$guidance-course-offset-x: -852px;
+$guidance-course-offset-y: -579px;
+$guidance-course-width: 16px;
+$guidance-course-height: 16px;
+$guidance-course-total-width: 868px;
+$guidance-course-total-height: 612px;
+$guidance-course-image: '/images/sprite.png';
+$guidance-course: (852px, 579px, -852px, -579px, 16px, 16px, 868px, 612px, '/images/sprite.png', 'guidance-course', );
+$guidance-detail-name: 'guidance-detail';
+$guidance-detail-x: 730px;
+$guidance-detail-y: 254px;
+$guidance-detail-offset-x: -730px;
+$guidance-detail-offset-y: -254px;
+$guidance-detail-width: 14px;
+$guidance-detail-height: 14px;
+$guidance-detail-total-width: 868px;
+$guidance-detail-total-height: 612px;
+$guidance-detail-image: '/images/sprite.png';
+$guidance-detail: (730px, 254px, -730px, -254px, 14px, 14px, 868px, 612px, '/images/sprite.png', 'guidance-detail', );
+$guidance-guest-num-name: 'guidance-guest-num';
+$guidance-guest-num-x: 421px;
+$guidance-guest-num-y: 532px;
+$guidance-guest-num-offset-x: -421px;
+$guidance-guest-num-offset-y: -532px;
+$guidance-guest-num-width: 166px;
+$guidance-guest-num-height: 44px;
+$guidance-guest-num-total-width: 868px;
+$guidance-guest-num-total-height: 612px;
+$guidance-guest-num-image: '/images/sprite.png';
+$guidance-guest-num: (421px, 532px, -421px, -532px, 166px, 44px, 868px, 612px, '/images/sprite.png', 'guidance-guest-num', );
+$guidance-msg-name: 'guidance-msg';
+$guidance-msg-x: 607px;
+$guidance-msg-y: 488px;
+$guidance-msg-offset-x: -607px;
+$guidance-msg-offset-y: -488px;
+$guidance-msg-width: 19px;
+$guidance-msg-height: 19px;
+$guidance-msg-total-width: 868px;
+$guidance-msg-total-height: 612px;
+$guidance-msg-image: '/images/sprite.png';
+$guidance-msg: (607px, 488px, -607px, -488px, 19px, 19px, 868px, 612px, '/images/sprite.png', 'guidance-msg', );
+$guidance-user-info-name: 'guidance-user-info';
+$guidance-user-info-x: 627px;
+$guidance-user-info-y: 403px;
+$guidance-user-info-offset-x: -627px;
+$guidance-user-info-offset-y: -403px;
+$guidance-user-info-width: 21px;
+$guidance-user-info-height: 19px;
+$guidance-user-info-total-width: 868px;
+$guidance-user-info-total-height: 612px;
+$guidance-user-info-image: '/images/sprite.png';
+$guidance-user-info: (627px, 403px, -627px, -403px, 21px, 19px, 868px, 612px, '/images/sprite.png', 'guidance-user-info', );
+$guidance-user-num-name: 'guidance-user-num';
+$guidance-user-num-x: 421px;
+$guidance-user-num-y: 488px;
+$guidance-user-num-offset-x: -421px;
+$guidance-user-num-offset-y: -488px;
+$guidance-user-num-width: 166px;
+$guidance-user-num-height: 44px;
+$guidance-user-num-total-width: 868px;
+$guidance-user-num-total-height: 612px;
+$guidance-user-num-image: '/images/sprite.png';
+$guidance-user-num: (421px, 488px, -421px, -488px, 166px, 44px, 868px, 612px, '/images/sprite.png', 'guidance-user-num', );
+$head-rainbow-name: 'head-rainbow';
+$head-rainbow-x: 421px;
+$head-rainbow-y: 423px;
+$head-rainbow-offset-x: -421px;
+$head-rainbow-offset-y: -423px;
+$head-rainbow-width: 195px;
+$head-rainbow-height: 65px;
+$head-rainbow-total-width: 868px;
+$head-rainbow-total-height: 612px;
+$head-rainbow-image: '/images/sprite.png';
+$head-rainbow: (421px, 423px, -421px, -423px, 195px, 65px, 868px, 612px, '/images/sprite.png', 'head-rainbow', );
+$left-children-bg-name: 'left-children-bg';
+$left-children-bg-x: 0px;
+$left-children-bg-y: 256px;
+$left-children-bg-offset-x: 0px;
+$left-children-bg-offset-y: -256px;
+$left-children-bg-width: 271px;
+$left-children-bg-height: 356px;
+$left-children-bg-total-width: 868px;
+$left-children-bg-total-height: 612px;
+$left-children-bg-image: '/images/sprite.png';
+$left-children-bg: (0px, 256px, 0px, -256px, 271px, 356px, 868px, 612px, '/images/sprite.png', 'left-children-bg', );
+$left-vegetation-name: 'left-vegetation';
+$left-vegetation-x: 421px;
+$left-vegetation-y: 0px;
+$left-vegetation-offset-x: -421px;
+$left-vegetation-offset-y: 0px;
+$left-vegetation-width: 323px;
+$left-vegetation-height: 231px;
+$left-vegetation-total-width: 868px;
+$left-vegetation-total-height: 612px;
+$left-vegetation-image: '/images/sprite.png';
+$left-vegetation: (421px, 0px, -421px, 0px, 323px, 231px, 868px, 612px, '/images/sprite.png', 'left-vegetation', );
+$platform-features-01-name: 'platform-features-01';
+$platform-features-01-x: 271px;
+$platform-features-01-y: 256px;
+$platform-features-01-offset-x: -271px;
+$platform-features-01-offset-y: -256px;
+$platform-features-01-width: 76px;
+$platform-features-01-height: 77px;
+$platform-features-01-total-width: 868px;
+$platform-features-01-total-height: 612px;
+$platform-features-01-image: '/images/sprite.png';
+$platform-features-01: (271px, 256px, -271px, -256px, 76px, 77px, 868px, 612px, '/images/sprite.png', 'platform-features-01', );
+$platform-features-02-name: 'platform-features-02';
+$platform-features-02-x: 627px;
+$platform-features-02-y: 231px;
+$platform-features-02-offset-x: -627px;
+$platform-features-02-offset-y: -231px;
+$platform-features-02-width: 79px;
+$platform-features-02-height: 76px;
+$platform-features-02-total-width: 868px;
+$platform-features-02-total-height: 612px;
+$platform-features-02-image: '/images/sprite.png';
+$platform-features-02: (627px, 231px, -627px, -231px, 79px, 76px, 868px, 612px, '/images/sprite.png', 'platform-features-02', );
+$platform-features-03-name: 'platform-features-03';
+$platform-features-03-x: 271px;
+$platform-features-03-y: 333px;
+$platform-features-03-offset-x: -271px;
+$platform-features-03-offset-y: -333px;
+$platform-features-03-width: 58px;
+$platform-features-03-height: 82px;
+$platform-features-03-total-width: 868px;
+$platform-features-03-total-height: 612px;
+$platform-features-03-image: '/images/sprite.png';
+$platform-features-03: (271px, 333px, -271px, -333px, 58px, 82px, 868px, 612px, '/images/sprite.png', 'platform-features-03', );
+$platform-features-04-name: 'platform-features-04';
+$platform-features-04-x: 744px;
+$platform-features-04-y: 436px;
+$platform-features-04-offset-x: -744px;
+$platform-features-04-offset-y: -436px;
+$platform-features-04-width: 121px;
+$platform-features-04-height: 71px;
+$platform-features-04-total-width: 868px;
+$platform-features-04-total-height: 612px;
+$platform-features-04-image: '/images/sprite.png';
+$platform-features-04: (744px, 436px, -744px, -436px, 121px, 71px, 868px, 612px, '/images/sprite.png', 'platform-features-04', );
+$platform-features-05-name: 'platform-features-05';
+$platform-features-05-x: 627px;
+$platform-features-05-y: 307px;
+$platform-features-05-offset-x: -627px;
+$platform-features-05-offset-y: -307px;
+$platform-features-05-width: 81px;
+$platform-features-05-height: 74px;
+$platform-features-05-total-width: 868px;
+$platform-features-05-total-height: 612px;
+$platform-features-05-image: '/images/sprite.png';
+$platform-features-05: (627px, 307px, -627px, -307px, 81px, 74px, 868px, 612px, '/images/sprite.png', 'platform-features-05', );
+$report-copy-name: 'report-copy';
+$report-copy-x: 823px;
+$report-copy-y: 507px;
+$report-copy-offset-x: -823px;
+$report-copy-offset-y: -507px;
+$report-copy-width: 42px;
+$report-copy-height: 46px;
+$report-copy-total-width: 868px;
+$report-copy-total-height: 612px;
+$report-copy-image: '/images/sprite.png';
+$report-copy: (823px, 507px, -823px, -507px, 42px, 46px, 868px, 612px, '/images/sprite.png', 'report-copy', );
+$report-dot-name: 'report-dot';
+$report-dot-x: 852px;
+$report-dot-y: 569px;
+$report-dot-offset-x: -852px;
+$report-dot-offset-y: -569px;
+$report-dot-width: 6px;
+$report-dot-height: 6px;
+$report-dot-total-width: 868px;
+$report-dot-total-height: 612px;
+$report-dot-image: '/images/sprite.png';
+$report-dot: (852px, 569px, -852px, -569px, 6px, 6px, 868px, 612px, '/images/sprite.png', 'report-dot', );
+$report-print-name: 'report-print';
+$report-print-x: 347px;
+$report-print-y: 256px;
+$report-print-offset-x: -347px;
+$report-print-offset-y: -256px;
+$report-print-width: 64px;
+$report-print-height: 48px;
+$report-print-total-width: 868px;
+$report-print-total-height: 612px;
+$report-print-image: '/images/sprite.png';
+$report-print: (347px, 256px, -347px, -256px, 64px, 48px, 868px, 612px, '/images/sprite.png', 'report-print', );
+$right-children-bg-name: 'right-children-bg';
+$right-children-bg-x: 421px;
+$right-children-bg-y: 231px;
+$right-children-bg-offset-x: -421px;
+$right-children-bg-offset-y: -231px;
+$right-children-bg-width: 206px;
+$right-children-bg-height: 192px;
+$right-children-bg-total-width: 868px;
+$right-children-bg-total-height: 612px;
+$right-children-bg-image: '/images/sprite.png';
+$right-children-bg: (421px, 231px, -421px, -231px, 206px, 192px, 868px, 612px, '/images/sprite.png', 'right-children-bg', );
+$right-vegetation-name: 'right-vegetation';
+$right-vegetation-x: 0px;
+$right-vegetation-y: 0px;
+$right-vegetation-offset-x: 0px;
+$right-vegetation-offset-y: 0px;
+$right-vegetation-width: 421px;
+$right-vegetation-height: 256px;
+$right-vegetation-total-width: 868px;
+$right-vegetation-total-height: 612px;
+$right-vegetation-image: '/images/sprite.png';
+$right-vegetation: (0px, 0px, 0px, 0px, 421px, 256px, 868px, 612px, '/images/sprite.png', 'right-vegetation', );
+$teacher-show-name: 'teacher-show';
+$teacher-show-x: 617px;
+$teacher-show-y: 511px;
+$teacher-show-offset-x: -617px;
+$teacher-show-offset-y: -511px;
+$teacher-show-width: 15px;
+$teacher-show-height: 16px;
+$teacher-show-total-width: 868px;
+$teacher-show-total-height: 612px;
+$teacher-show-image: '/images/sprite.png';
+$teacher-show: (617px, 511px, -617px, -511px, 15px, 16px, 868px, 612px, '/images/sprite.png', 'teacher-show', );
+$spritesheet-width: 868px;
+$spritesheet-height: 612px;
+$spritesheet-image: '/images/sprite.png';
+$spritesheet-sprites: ($chat-active, $chat-add-active, $chat-add-icon, $chat-add, $chat-big, $chat-friend-active, $chat-friend-add, $chat-friend-notify, $chat-friend, $chat-group-active, $chat-group, $chat-guide-active, $chat-guide, $chat-menu-active, $chat-menu, $chat-msg-active, $chat-msg-icon, $chat-msg, $chat-recieve-request, $chat-record-empty, $chat-send-request, $chat-serve-active, $chat-serve, $chat-service, $chat-system-notify, $chat, $giraffe, $guidance-chat-active, $guidance-chat, $guidance-course-active, $guidance-course, $guidance-detail, $guidance-guest-num, $guidance-msg, $guidance-user-info, $guidance-user-num, $head-rainbow, $left-children-bg, $left-vegetation, $platform-features-01, $platform-features-02, $platform-features-03, $platform-features-04, $platform-features-05, $report-copy, $report-dot, $report-print, $right-children-bg, $right-vegetation, $teacher-show, );
+$spritesheet: (868px, 612px, '/images/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+.image-chat-active {
+  @include sprite($chat-active);
+}
+.image-chat-add-active {
+  @include sprite($chat-add-active);
+}
+.image-chat-add-icon {
+  @include sprite($chat-add-icon);
+}
+.image-chat-add {
+  @include sprite($chat-add);
+}
+.image-chat-big {
+  @include sprite($chat-big);
+}
+.image-chat-friend-active {
+  @include sprite($chat-friend-active);
+}
+.image-chat-friend-add {
+  @include sprite($chat-friend-add);
+}
+.image-chat-friend-notify {
+  @include sprite($chat-friend-notify);
+}
+.image-chat-friend {
+  @include sprite($chat-friend);
+}
+.image-chat-group-active {
+  @include sprite($chat-group-active);
+}
+.image-chat-group {
+  @include sprite($chat-group);
+}
+.image-chat-guide-active {
+  @include sprite($chat-guide-active);
+}
+.image-chat-guide {
+  @include sprite($chat-guide);
+}
+.image-chat-menu-active {
+  @include sprite($chat-menu-active);
+}
+.image-chat-menu {
+  @include sprite($chat-menu);
+}
+.image-chat-msg-active {
+  @include sprite($chat-msg-active);
+}
+.image-chat-msg-icon {
+  @include sprite($chat-msg-icon);
+}
+.image-chat-msg {
+  @include sprite($chat-msg);
+}
+.image-chat-recieve-request {
+  @include sprite($chat-recieve-request);
+}
+.image-chat-record-empty {
+  @include sprite($chat-record-empty);
+}
+.image-chat-send-request {
+  @include sprite($chat-send-request);
+}
+.image-chat-serve-active {
+  @include sprite($chat-serve-active);
+}
+.image-chat-serve {
+  @include sprite($chat-serve);
+}
+.image-chat-service {
+  @include sprite($chat-service);
+}
+.image-chat-system-notify {
+  @include sprite($chat-system-notify);
+}
+.image-chat {
+  @include sprite($chat);
+}
+.image-giraffe {
+  @include sprite($giraffe);
+}
+.image-guidance-chat-active {
+  @include sprite($guidance-chat-active);
+}
+.image-guidance-chat {
+  @include sprite($guidance-chat);
+}
+.image-guidance-course-active {
+  @include sprite($guidance-course-active);
+}
+.image-guidance-course {
+  @include sprite($guidance-course);
+}
+.image-guidance-detail {
+  @include sprite($guidance-detail);
+}
+.image-guidance-guest-num {
+  @include sprite($guidance-guest-num);
+}
+.image-guidance-msg {
+  @include sprite($guidance-msg);
+}
+.image-guidance-user-info {
+  @include sprite($guidance-user-info);
+}
+.image-guidance-user-num {
+  @include sprite($guidance-user-num);
+}
+.image-head-rainbow {
+  @include sprite($head-rainbow);
+}
+.image-left-children-bg {
+  @include sprite($left-children-bg);
+}
+.image-left-vegetation {
+  @include sprite($left-vegetation);
+}
+.image-platform-features-01 {
+  @include sprite($platform-features-01);
+}
+.image-platform-features-02 {
+  @include sprite($platform-features-02);
+}
+.image-platform-features-03 {
+  @include sprite($platform-features-03);
+}
+.image-platform-features-04 {
+  @include sprite($platform-features-04);
+}
+.image-platform-features-05 {
+  @include sprite($platform-features-05);
+}
+.image-report-copy {
+  @include sprite($report-copy);
+}
+.image-report-dot {
+  @include sprite($report-dot);
+}
+.image-report-print {
+  @include sprite($report-print);
+}
+.image-right-children-bg {
+  @include sprite($right-children-bg);
+}
+.image-right-vegetation {
+  @include sprite($right-vegetation);
+}
+.image-teacher-show {
+  @include sprite($teacher-show);
+}

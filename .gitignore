@@ -22,8 +22,8 @@ _testmain.go
 *.exe
 *.test
 *.prof
-/www/libs
-/www/tool/node_modules
+/wap/libs
+/wap/tool/node_modules
 .idea/
 DotDotDot.iml
 src/dot/www/tool/node_modules
