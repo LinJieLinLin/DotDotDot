@@ -8,7 +8,7 @@ module.exports = function (gulp, _, dir) {
     });
 
     gulp.task('watch', function () {
-        gulp.watch(dir('src/style/**/*.scss'), 
+        gulp.watch(dir('../b-start/style/*.scss'), 
             _.sync(gulp).sync(['sass', 'reload']));
     });
 };
