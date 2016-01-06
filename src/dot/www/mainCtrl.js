@@ -12,6 +12,8 @@ D.controller('mainCtrl', ['$scope', '$timeout', 'S', function($scope, $timeout, 
     $scope.tabIndex = 0;
     $scope.tabs = [{
         name: '姓名'
+    },{
+        name: 'GG123'
     }, {
         name: '菜单'
     }];

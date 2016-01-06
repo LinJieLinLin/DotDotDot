@@ -24,9 +24,9 @@
 </head>
 
 <body ng-controller="mainCtrl">
-    <div class="border-1">
+    <div class="border-1" ng-repeat="a in [0,1,2,3,4,5,6,7,8,9]">
         <div class="tab" ng-class="{'tab-cur':$index==tabIndex}" ng-repeat="t in tabs">{{t.name}}</div>
-    </div>
+    </div>    
 </body>
 
 </html>
