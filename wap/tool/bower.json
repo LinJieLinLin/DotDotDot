@@ -4,6 +4,5 @@
     "dependencies": {
         "jquery"               : "2.1.4",
         "onsenui"              : "*",     
-        "font-awesome"         : "4.4.0"
     }
 }
