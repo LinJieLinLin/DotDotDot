@@ -30,3 +30,5 @@ src/dot/www/tool/node_modules
 src/dot/www/libs
 /src/dot/*.exe~
 /src/dot/conf/*.docx
+/src/dot/conf/dotdotdot.pdm
+/src/dot/conf/dotdotdot.pdb
