@@ -25,4 +25,11 @@ func init() {
 	beego.SetStaticPath("/dot", "www")
 	beego.Router("/*", &ErrorController{}, "*:Error404")
 	beego.ViewsPath = "view"
+
+	//点餐
+	beego.Router("/d/name", &DCtrl{}, "get:GetName")
+	beego.Router("/d/name", &DCtrl{}, "post:SetName")
+	beego.Router("/d/menu", &DCtrl{}, "get:GetMenu")
+	beego.Router("/d/menu", &DCtrl{}, "post:SetMenu")
+	beego.Router("/d/list", &DCtrl{}, "get:GetList")
 }
