@@ -32,4 +32,5 @@ func init() {
 	beego.Router("/d/menu", &DCtrl{}, "get:GetMenu")
 	beego.Router("/d/menu", &DCtrl{}, "post:SetMenu")
 	beego.Router("/d/list", &DCtrl{}, "get:GetList")
+	beego.Router("/d/list", &DCtrl{}, "post:SetList")
 }
