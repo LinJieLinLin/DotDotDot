@@ -7,6 +7,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/validation"
+	"time"
 )
 
 type DCtrl struct {
@@ -107,10 +108,52 @@ func (c *DCtrl) GetMenu() {
 	return
 }
 func (c *DCtrl) SetMenu() {
-	fmt.Println("hehe")
-	re := Re{0, "123", "success"}
-	c.Data["json"] = re
-	c.ServeJson()
+	fmt.Println("SetMenu")
+	re := Re{-1, "", ""}
+	defer func() {
+		c.Data["json"] = re
+		c.ServeJson()
+	}()
+	menu := Menu{}
+	valid := validation.Validation{}
+	if err := json.Unmarshal([]byte(c.GetString("data")), &menu); err != nil {
+		beego.Error(err)
+		re.Msg = E0
+		return
+	}
+	b, err := valid.Valid(&menu)
+	if err != nil {
+		beego.Error(err)
+		re.Msg = E0
+		return
+	}
+	if !b {
+		for _, err := range valid.Errors {
+			beego.Error(err.Key, err.Message)
+			re.Msg = E0
+			return
+		}
+	}
+	o := orm.NewOrm()
+	_, err = o.Insert(&menu)
+	if nil != err {
+		beego.Error("DB:", err)
+		re.Msg = E1
+		return
+	}
+	//菜单
+	menuList := []*Menu{}
+	num, err := o.QueryTable("tem_menu").All(&menuList)
+	if nil != err {
+		beego.Error("DB:", err)
+		re.Msg = E1
+		return
+	}
+	if num != 0 {
+		re.Code = 0
+		re.Data = menuList
+	}
+	re.Msg = ""
 	return
 }
 func (c *DCtrl) GetList() {
@@ -202,16 +245,12 @@ func (c *DCtrl) SetList() {
 	}
 	beego.Debug(resData)
 	o := orm.NewOrm()
-	buy := []*Buy{}
-	num, err := o.QueryTable("tem_buy").All(&buy)
+	resData.Time = time.Now().Format("2006-01-02 15:04:05")
+	_, err = o.Insert(&resData)
 	if nil != err {
 		beego.Error("DB:", err)
 		re.Msg = E1
 		return
-	}
-	if num != 0 {
-		re.Code = 0
-		re.Data = buy
 	}
 	re.Msg = ""
 	return
@@ -224,10 +263,10 @@ type Buy struct {
 	Time string `form:"-"`
 }
 type Menu struct {
-	Id    int64
-	Name  string
-	Type  int64
-	Price float64
+	Id    int64   `form:"-"`
+	Name  string  `form:"name";valid:"Required"`
+	Type  int64   `form:"type";valid:"Required"`
+	Price float64 `form:"price";valid:"Required"`
 }
 type Name struct {
 	Id   int64

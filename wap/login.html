@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
+<html lang="en" ng-app="dot" ng-csp>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- JS dependencies (order matters!) -->
+    <script src="libs/onsenui/js/onsenui.js"></script>
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/onsenui/js/angular-onsenui.js"></script>
+    <!-- normal js -->
+    <script src="dot.js"></script>
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="libs/onsenui/css/onsenui.css" />
+    <link rel="stylesheet" href="libs/onsenui/css/onsen-css-components-blue-basic-theme.css" />
+    <title>DOTDOT</title>
+</head>
+
+<body>
+    <style>
+    .login-form {
+        text-align: center;
+        width: 80%;
+        margin: 60px auto 0;
+    }
+    
+    input[type=text],
+    input[type=password] {
+        display: block;
+        width: 100%;
+        margin: 1% auto;
+        outline: none;
+        height: 100%;
+        padding-top: 15px;
+        padding-bottom: 16px;
+    }
+    
+    .login-button {
+        width: 100%;
+        margin: 10% auto;
+    }
+    
+    .forgot-password {
+        display: block;
+        margin: 8px auto 0 auto;
+        font-size: 14px;
+    }
+    
+    .ion-person {
+        font-size: 80px;
+        color: #009688;
+    }
+    </style>
+    <ons-page>
+        <div class="login-form">
+            <label for="account">
+                <ons-icon icon="ion-person" calss="ion-person"></ons-icon>
+                <input class="text-input--material" placeholder="用户名" type="text" name="account" required>
+            </label>
+            <label for="passowrd">
+                <input class="text-input--material" placeholder="密码" type="password" name="password" required>
+            </label>
+            <button class="button login-button button--material">
+                <ons-ripple></ons-ripple>
+                登录</button>
+            <button class="button button--quiet">
+                <ons-ripple></ons-ripple>
+                忘记密码?</button>
+        </div>
+    </ons-page>
+</body>
+
+</html>
