@@ -1,14 +1,86 @@
-.tab {
-  height: 50px;
-  line-height: 50px;
-  display: inline-block;
+.body .list {
+  float: left;
+  width: 25%;
+  background-color: #CCCCCC;
   text-align: center;
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 30px;
 }
 
-.tabtab-cur {
+.body .list .title {
+  text-align: center;
+  font-weight: bold;
   color: white;
-  background-color: rgba(255, 255, 0, 0.3);
+  line-height: 50px;
+  height: 50px;
+  font-size: 23px;
+  border-bottom: 1px solid #fff;
+}
+
+.body .list .main {
+  height: 600px;
+  overflow: auto;
+}
+
+.body .list .c {
+  line-height: 40px;
+  height: 40px;
+  font-size: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+.body .list:nth-child(1) {
+  background-color: #6699CC;
+}
+
+.body .list:nth-child(2) {
+  background-color: #66CCCC;
+}
+
+.body .list:nth-child(3) {
+  background-color: #FFCCCC;
+}
+
+.body .list:nth-child(4) {
+  background-color: #9966CC;
+}
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  background-color: #CC99CC;
+}
+
+.footer .count-list section {
+  float: left;
+  height: 100px;
+  line-height: 100px;
+  font-size: 50px;
+}
+
+.footer .count-list section:nth-child(1) {
+  width: 20%;
+}
+
+.footer .count-list section:nth-child(1) span {
+  color: #f17508;
+}
+
+.footer .count-list section:nth-child(2) {
+  width: 60%;
+}
+
+.footer .count-list section:nth-child(2) div {
+  float: left;
+  font-size: 20px;
+  margin: 0 20px;
+}
+
+.footer .count-list section:nth-child(3) {
+  width: 20%;
+}
+
+.footer .count-list section:nth-child(3) span {
+  color: #f17508;
 }

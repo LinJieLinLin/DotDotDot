@@ -170,6 +170,37 @@ pre {
   vertical-align: middle;
 }
 
+.max {
+  overflow: hidden;
+}
+
+.max,
+.max p,
+.max pre,
+.max li,
+.max ul,
+.max ol,
+.max div,
+.max span,
+.max b,
+.max em,
+.max strong,
+.max i,
+.max a,
+.max h1,
+.max h2,
+.max h3,
+.max h4,
+.max h5,
+.max h6,
+.max img {
+  max-width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
 .fs-12 {
   font-size: 12px;
 }
@@ -844,37 +875,6 @@ pre {
 
 .mg-r50 {
   margin-right: 50px;
-}
-
-.max {
-  overflow: hidden;
-}
-
-.max,
-.max p,
-.max pre,
-.max li,
-.max ul,
-.max ol,
-.max div,
-.max span,
-.max b,
-.max em,
-.max strong,
-.max i,
-.max a,
-.max h1,
-.max h2,
-.max h3,
-.max h4,
-.max h5,
-.max h6,
-.max img {
-  max-width: 100%;
-}
-
-.hide {
-  display: none;
 }
 
 @media screen and (max-width: 1240px) {

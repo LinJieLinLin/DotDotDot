@@ -13,5 +13,7 @@ module.exports = function(gulp, _, dir) {
             _.sync(gulp).sync(['sass', 'reload']));
         gulp.watch(dir('../*.js'),
             _.sync(gulp).sync(['reload']));
+        gulp.watch(dir('../*.html'),
+            _.sync(gulp).sync(['reload']));
     });
 };

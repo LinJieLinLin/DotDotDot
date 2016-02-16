@@ -125,9 +125,11 @@ pre {
     text-decoration: none;
     cursor: default;
 }
-.border-1{
-    @include border(full,$gray-5)
+
+.border-1 {
+    @include border(full, $gray-5)
 }
+
 .b-w {
     margin: 0 auto;
     width: 1200px;
@@ -169,57 +171,6 @@ pre {
     vertical-align: middle;
 }
 
-@for $fs from 6 through 34 {
-    .fs-#{$fs*2} {
-        font-size: $fs * 2px;
-    }
-}
-
-@for $padding-size from 1 through 10 {
-    .pd-f#{$padding-size*5} {
-        padding: $padding-size * 5px;
-    }
-    .pd-x#{$padding-size*5} {
-        padding: 0 $padding-size * 5px;
-    }
-    .pd-y#{$padding-size*5} {
-        padding: $padding-size * 5px 0;
-    }
-    .pd-t#{$padding-size*5} {
-        padding-top: $padding-size * 5px;
-    }
-    .pd-b#{$padding-size*5} {
-        padding-bottom: $padding-size * 5px;
-    }
-    .pd-l#{$padding-size*5} {
-        padding-left: $padding-size * 5px;
-    }
-    .pd-r#{$padding-size*5} {
-        padding-right: $padding-size * 5px;
-    }
-    .mg-f#{$padding-size*5} {
-        margin: $padding-size * 5px;
-    }
-    .mg-x#{$padding-size*5} {
-        margin: 0 $padding-size * 5px;
-    }
-    .mg-y#{$padding-size*5} {
-        margin: $padding-size * 5px 0;
-    }
-    .mg-t#{$padding-size*5} {
-        margin-top: $padding-size * 5px;
-    }
-    .mg-b#{$padding-size*5} {
-        margin-bottom: $padding-size * 5px;
-    }
-    .mg-l#{$padding-size*5} {
-        margin-left: $padding-size * 5px;
-    }
-    .mg-r#{$padding-size*5} {
-        margin-right: $padding-size * 5px;
-    }
-}
-
 .max {
     overflow: hidden;
 }
@@ -251,13 +202,7 @@ pre {
     display: none;
 }
 
-// @each $color-name,
-// $color-value in $color {
-//     .c-#{$color-name} {
-//         color: map-get($color-value, 100);
-//     }
-// }
-
+@include init();
 @media screen and (max-width:1240px) {
     body {
         min-width: 1024px;

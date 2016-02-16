@@ -252,6 +252,7 @@ func (c *DCtrl) SetList() {
 		re.Msg = E1
 		return
 	}
+	re.Code = 0
 	re.Msg = ""
 	return
 }

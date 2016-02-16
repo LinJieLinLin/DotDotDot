@@ -23,7 +23,7 @@ func init() {
 	beego.Router("/index.html", &MainController{})
 	beego.Router("/getUser", &GetUser{}, "*:GetUser")
 	beego.SetStaticPath("/dot", "www")
-	beego.SetStaticPath("/d", "www")
+	// beego.SetStaticPath("/d", "www")
 	beego.Router("/*", &ErrorController{}, "*:Error404")
 	beego.ViewsPath = "view"
 

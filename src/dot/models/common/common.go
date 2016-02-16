@@ -6,7 +6,7 @@ const (
 )
 
 type Re struct {
-	Code int
-	Data interface{}
-	Msg  string
+	Code int         `json:"code"`
+	Data interface{} `json:"data"`
+	Msg  string      `json:"msg"`
 }
