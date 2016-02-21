@@ -91,21 +91,29 @@ func (c *DCtrl) GetMenu() {
 		c.Data["json"] = re
 		c.ServeJson()
 	}()
-
-	o := orm.NewOrm()
-	menu := []*Menu{}
-	num, err := o.QueryTable("tem_menu").All(&menu)
-	if nil != err {
-		beego.Error("DB:", err)
-		re.Msg = E1
+	menuList, msg := getMenu()
+	if msg != "" {
+		re.Msg = msg
 		return
 	}
-	if num != 0 {
-		re.Code = 0
-		re.Data = menu
-	}
+	re.Code = 0
+	re.Data = menuList
 	re.Msg = ""
 	return
+}
+func getMenu() ([]*Menu, string) {
+	msg := ""
+	o := orm.NewOrm()
+	menuList := []*Menu{}
+	num, err := o.QueryTable("tem_menu").All(&menuList)
+	if nil != err {
+		beego.Error("DB:", err)
+		msg = E1
+		return menuList, msg
+	}
+	beego.Info("menuList is", num)
+	msg = ""
+	return menuList, msg
 }
 func (c *DCtrl) SetMenu() {
 	fmt.Println("SetMenu")
@@ -134,27 +142,29 @@ func (c *DCtrl) SetMenu() {
 			return
 		}
 	}
-	o := orm.NewOrm()
-	_, err = o.Insert(&menu)
-	if nil != err {
-		beego.Error("DB:", err)
-		re.Msg = E1
+	if e := setMenuOne(menu); e != "" {
+		re.Msg = e
 		return
 	}
 	//菜单
-	menuList := []*Menu{}
-	num, err := o.QueryTable("tem_menu").All(&menuList)
-	if nil != err {
-		beego.Error("DB:", err)
-		re.Msg = E1
+	menuList, msg := getMenu()
+	if msg != "" {
+		re.Msg = msg
 		return
 	}
-	if num != 0 {
-		re.Code = 0
-		re.Data = menuList
-	}
+	re.Code = 0
+	re.Data = menuList
 	re.Msg = ""
 	return
+}
+func setMenuOne(menu Menu) string {
+	o := orm.NewOrm()
+	_, err := o.Insert(&menu)
+	if nil != err {
+		beego.Error("DB:", err)
+		return E1
+	}
+	return ""
 }
 func (c *DCtrl) GetList() {
 	fmt.Println("GetList")
@@ -215,7 +225,7 @@ func (c *DCtrl) GetList() {
 	re.Msg = ""
 	return
 }
-func (c *DCtrl) SetList() {
+func (c *DCtrl) SetListOne() {
 	fmt.Println("SetList")
 	re := Re{-1, "", ""}
 	defer func() {
@@ -244,11 +254,8 @@ func (c *DCtrl) SetList() {
 		}
 	}
 	beego.Debug(resData)
-	o := orm.NewOrm()
-	resData.Time = time.Now().Format("2006-01-02 15:04:05")
-	_, err = o.Insert(&resData)
-	if nil != err {
-		beego.Error("DB:", err)
+	msg := setListOne(resData)
+	if msg != "" {
 		re.Msg = E1
 		return
 	}
@@ -256,18 +263,74 @@ func (c *DCtrl) SetList() {
 	re.Msg = ""
 	return
 }
+func (c *DCtrl) SetList() {
+	fmt.Println("SetList")
+	re := Re{-1, "", ""}
+	defer func() {
+		c.Data["json"] = re
+		c.ServeJson()
+	}()
+
+	resData := []*Buy{}
+	beego.Info(c.GetString("data"))
+	if err := json.Unmarshal([]byte(c.GetString("data")), &resData); err != nil {
+		beego.Error(err)
+		re.Msg = E0
+		return
+	}
+
+	beego.Debug(resData)
+	for _, v := range resData {
+		valid := validation.Validation{}
+		beego.Info(v)
+		b, err := valid.Valid(v)
+		if err != nil {
+			beego.Error(err)
+			re.Msg = E0
+			return
+		}
+		if !b {
+			for _, err := range valid.Errors {
+				beego.Error(err.Key, err.Message)
+				re.Msg = E0
+				return
+			}
+		}
+	}
+	for _, v := range resData {
+		msg := setListOne(*v)
+		if msg != "" {
+			re.Msg = E1
+			return
+		}
+	}
+	re.Code = 0
+	re.Msg = ""
+	return
+}
+func setListOne(buy Buy) string {
+	msg := ""
+	o := orm.NewOrm()
+	buy.Time = time.Now().Format("2006-01-02 15:04:05")
+	_, err := o.Insert(&buy)
+	if nil != err {
+		beego.Error("DB:", err)
+		msg = E1
+	}
+	return msg
+}
 
 type Buy struct {
 	Id   int64  `form:"-"`
-	Uid  int64  `form:"uid";valid:"Required"`
-	Mid  int64  `form:"mid";valid:"Required"`
+	Uid  int64  `valid:"Required";form:"uid"`
+	Mid  int    `valid:"Min(1)";form:"mid"`
 	Time string `form:"-"`
 }
 type Menu struct {
 	Id    int64   `form:"-"`
-	Name  string  `form:"name";valid:"Required"`
-	Type  int64   `form:"type";valid:"Required"`
-	Price float64 `form:"price";valid:"Required"`
+	Name  string  `valid:"Required";form:"name"`
+	Type  int64   `valid:"Required";form:"type"`
+	Price float64 `valid:"Required";form:"price"`
 }
 type Name struct {
 	Id   int64
