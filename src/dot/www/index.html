@@ -24,23 +24,25 @@
 </head>
 
 <body ng-controller="mainCtrl">
+    <section class="header">
+        <div class="count-list">
+            <section>姓名：<span>{{myMenu.name}}</span> </section>
+            <section>
+                <div ng-repeat="m in myMenu.menuList track by $index" ng-click="delMenu($index)">{{m.Name}} ￥{{m.Price|number:2}}</div>
+            </section>
+            <section>总价<span ng-style="myMenu.priceColor"> ￥{{myMenu.price}}</span> </section>
+            <section>
+                <button ng-click="setList()">{{buttonName}}</button>
+            </section>
+            <div class="clear"></div>
+        </div>
+    </section>
+    <div style="height:100px;width:100%;"></div>
     <section class="body">
         <div class="list">
             <p class="title">我是</p>
             <div class="main">
                 <div ng-repeat="u in D.user" class="c" ng-click="select(u,'user')">
-                    <span>{{u.Name}}</span>
-                </div>
-                <div ng-repeat="u in D.user" class="c">
-                    <span>{{u.Name}}</span>
-                </div>
-                <div ng-repeat="u in D.user" class="c">
-                    <span>{{u.Name}}</span>
-                </div>
-                <div ng-repeat="u in D.user" class="c">
-                    <span>{{u.Name}}</span>
-                </div>
-                <div ng-repeat="u in D.user" class="c">
                     <span>{{u.Name}}</span>
                 </div>
             </div>
@@ -82,15 +84,74 @@
             </div>
         </div>
     </section>
-    <section class="footer">
-        <div class="count-list">
-            <section>姓名：<span>{{myMenu.name}}</span> </section>
-            <section>
-                <div ng-repeat="m in myMenu.menuList track by $index">{{m.Name}} ￥{{m.Price|number:2}}</div>
-            </section>
-            <section>总价<span ng-style="myMenu.priceColor"> ￥{{myMenu.price}}</span> </section>
-            <div class="clear"></div>
-        </div>
+    <section class="body">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        姓名
+                    </th>
+                    <th>
+                        菜单
+                    </th>
+                    <th>
+                        价格
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="o in D.buyList.List">
+                    <td>
+                        {{o.Name}}
+                    </td>
+                    <td>
+                        {{o.MenuName}}
+                    </td>
+                    <td>
+                        {{o.Price}}
+                    </td>
+                    <td>
+                        {{o.Time}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>结算</h1>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        菜单
+                    </th>
+                    <th>
+                        数量
+                    </th>
+                    <th>
+                        价格
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="m in D.buyList.Menu">
+                    <td>
+                        {{m.MenuName}}
+                    </td>
+                    <td>
+                        {{m.Count}}
+                    </td>
+                    <td>
+                        {{m.Price}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>总人数：{{D.buyList.List.length||0}}</h1>
+        <h1>总价：{{allPrice}}</h1>
+        <h1 ng-show="D.buyList.List.length&&allPrice-D.buyList.List.length*20>0">超出：{{allPrice-D.buyList.List.length*20}}</h1>
+        <h1 ng-show="D.buyList.List.length&&allPrice-D.buyList.List.length*20<0">剩余：{{D.buyList.List.length*20-allPrice}}</h1>
     </section>
 </body>
 

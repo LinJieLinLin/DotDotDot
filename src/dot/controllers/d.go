@@ -175,9 +175,19 @@ func (c *DCtrl) GetList() {
 		c.ServeJson()
 	}()
 
+	sTime := c.GetString("time")
+	eTime := sTime
+	if sTime == "" {
+		sTime = time.Now().Format("2006-01-02") + " 00:00:00"
+		sTime = time.Now().Format("2006-01-02") + " 23:59:59"
+	} else {
+		sTime = sTime + " 00:00:00"
+		eTime = eTime + " 23:59:59"
+	}
 	qb, _ := orm.NewQueryBuilder("mysql")
 	// 构建查询对象
 	qb.Select("b.id",
+		"m.id as mid",
 		"n.name",
 		"m.name as menu_name",
 		"m.type",
@@ -187,12 +197,13 @@ func (c *DCtrl) GetList() {
 		From("tem_buy as b").
 		InnerJoin("tem_menu as m").On("b.mid = m.id").
 		InnerJoin("tem_name as n").On("b.uid = n.id").
-		// Where("age > ?").
+		Where("time between '" + sTime + "' and '" + eTime + "'").
 		OrderBy("id").Desc()
 	// Limit(10).Offset(0)
 
 	// 导出SQL语句
-	sql := qb.String()
+	sql := ""
+	detaultSql := qb.String()
 
 	qb, _ = orm.NewQueryBuilder("mysql")
 	qb.Select(
@@ -201,27 +212,39 @@ func (c *DCtrl) GetList() {
 		"SUM(price) as price",
 		"time",
 	)
-	qb.From(" (" + sql + ")" + " as list")
+	qb.From(" (" + detaultSql + ")" + " as list")
 	qb.GroupBy("name")
 	sql = qb.String()
-	beego.Debug(sql)
+	beego.Debug(sql, sTime)
 
 	list := []*List{}
-	// 执行SQL语句
+	// 读取下单列表执行SQL语句
 	o := orm.NewOrm()
 	o.Raw(sql).QueryRows(&list)
-
-	buy := []*Buy{}
-	num, err := o.QueryTable("tem_buy").All(&buy)
-	if nil != err {
-		beego.Error("DB:", err)
-		re.Msg = E1
+	if len(list) == 0 {
+		re.Code = 0
+		re.Msg = E2
 		return
 	}
-	if num != 0 {
-		re.Code = 0
-		re.Data = list
-	}
+	qb, _ = orm.NewQueryBuilder("mysql")
+	qb.Select(
+		"menu_name",
+		"COUNT(id) as count",
+		"SUM(price) as price",
+	)
+	qb.From(" (" + detaultSql + ")" + " as list")
+	qb.GroupBy("mid")
+	sql = qb.String()
+	beego.Debug(sql, sTime)
+
+	menuCount := []*MenuCount{}
+	//读取菜单价格
+	o.Raw(sql).QueryRows(&menuCount)
+	reData := ReListData{}
+	reData.List = list
+	reData.Menu = menuCount
+	re.Code = 0
+	re.Data = reData
 	re.Msg = ""
 	return
 }
@@ -279,7 +302,25 @@ func (c *DCtrl) SetList() {
 		return
 	}
 
-	beego.Debug(resData)
+	if len(resData) == 0 {
+		beego.Error("传入数据为空")
+		re.Msg = E0
+		return
+	}
+
+	o := orm.NewOrm()
+	nowDate := time.Now().Format("2006-01-02")
+	delSql := "DELETE from tem_buy where uid = ? and time between ? and ? "
+	res, err := o.Raw(delSql, resData[0].Uid, nowDate+" 00:00:00", nowDate+" 23:59:59").Exec()
+	if err == nil {
+		num, _ := res.RowsAffected()
+		beego.Info("删除数量: ", num)
+	}
+	if err != nil {
+		beego.Error(err)
+		re.Msg = E1
+		return
+	}
 	for _, v := range resData {
 		valid := validation.Validation{}
 		beego.Info(v)
@@ -343,6 +384,17 @@ type List struct {
 	Type     int64
 	Price    float64
 	Time     string
+}
+
+type MenuCount struct {
+	MenuName string
+	Price    float64
+	Count    int64
+}
+
+type ReListData struct {
+	List []*List
+	Menu []*MenuCount
 }
 
 func init() {
