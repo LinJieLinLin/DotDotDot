@@ -1,0 +1,38 @@
+$color:#BBADA0;
+$color-1:rgb(153, 204, 204);
+div {
+    width: 100%;
+}
+
+.ng-cloak {
+    display: none
+}
+
+.my-2048 {
+    font-size: 1rem;
+    width: 500px;
+    height: 500px;
+    background-color: $color;
+    border-radius: 8px;
+    padding: 1px 0;
+    margin: auto;
+    div {
+        position: relative;
+    }
+    >div {
+        height: 22.5%;
+        margin-top: 2%;
+        >div {
+            display: inline-block;
+            background-color: lighten($color, 3%);
+            width: 22.5%;
+            height: 100%;
+            margin-left: 2%;
+            text-align: center;
+            >span {
+                font-size: 7rem;
+                transform: translate(0, -50%)
+            }
+        }
+    }
+}

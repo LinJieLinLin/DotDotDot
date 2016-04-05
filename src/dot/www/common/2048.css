@@ -1,0 +1,44 @@
+div {
+  width: 100%;
+}
+
+.ng-cloak {
+  display: none;
+}
+
+.my-2048 {
+  font-size: 1rem;
+  width: 500px;
+  height: 500px;
+  background-color: #BBADA0;
+  border-radius: 8px;
+  padding: 1px 0;
+  margin: auto;
+}
+
+.my-2048 div {
+  position: relative;
+}
+
+.my-2048 > div {
+  height: 22.5%;
+  margin-top: 2%;
+}
+
+.my-2048 > div > div {
+  display: inline-block;
+  background-color: #c1b5a9;
+  width: 22.5%;
+  height: 100%;
+  margin-left: 2%;
+  text-align: center;
+}
+
+.my-2048 > div > div > span {
+  font-size: 7rem;
+  -webkit-transform: translate(0, -50%);
+     -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+       -o-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}

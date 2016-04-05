@@ -12,8 +12,10 @@ module.exports = function(gulp, _, dir) {
         gulp.watch(dir('../b-start/style/*.scss'), 
             _.sync(gulp).sync(['sass', 'reload']));
         gulp.watch(dir('../*.js'),
-            _.sync(gulp).sync(['reload']));
+            _.sync(gulp).sync(['reload']));        
         gulp.watch(dir('../*.html'),
+            _.sync(gulp).sync(['reload']));
+        gulp.watch(dir('../2048/*.*'),
             _.sync(gulp).sync(['reload']));
     });
 };
