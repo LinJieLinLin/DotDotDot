@@ -1,0 +1,16 @@
+@import 'module/_var';
+@import 'module/_mixin';
+.tab {
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    // width: 50%;
+    text-align: center;
+    font-weight: bold;
+    color:$black-8;
+    font-size:$fs-30;
+    &tab-cur{
+        color:$white-10;
+        background-color: $yellow-3;
+    }
+}

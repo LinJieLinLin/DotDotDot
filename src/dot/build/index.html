@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dot">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>点点点</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="common/common.css">
+    <link rel="stylesheet" type="text/css" href="common/index.css">
+    <!--lib js -->
+    <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/angular/angular.min.js"></script>
+    <script type="text/javascript" src="libs/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="service/defined-module.js"></script>
+    <script type="text/javascript" src="service/service.js"></script>
+    <script type="text/javascript" src="service/request.js"></script>
+    <!-- js -->
+    <script type="text/javascript" src="common/common.js"></script>
+    <script type="text/javascript" src="mainCtrl.js"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+    <div class="border-1" ng-repeat="a in [0,1,2,3,4,5,6,7,8,9]">
+        <div class="tab" ng-class="{'tab-cur':$index==tabIndex}" ng-repeat="t in tabs">{{t.name}}</div>
+    </div>    
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+//border eg:[full,red],[top,red]
+@mixin border ($position, $color) {
+    @if $position == full {
+        border: 1px solid $color;
+    } @else {
+        border-#{$position}: 1px solid $color;
+    }
+}
