@@ -34,3 +34,4 @@ src/dot/www/libs
 /src/dot/conf/dotdotdot.pdb
 /src/dot/d/libs
 /src/dot/tool/node_modules
+/mobile/node_modules

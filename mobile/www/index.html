@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,700,700italic,500italic' rel='stylesheet' type='text/css'>
+    <title>Onsen UI 2.0 Quickstart</title>
+
+    <link rel="stylesheet" href="/lib/onsenui/css/onsenui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
+
+    <script src="/lib/onsenui/js/onsenui.js"></script>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/lib/onsenui/js/angular-onsenui.js"></script>
+    <script src="/module/main/main.js"></script>
+
+</head>
+
+<body>
+    <ons-splitter var="dot" ng-controller="main as splitter">
+        <ons-splitter-side side="left" width="40%" collapse swipeable>
+            <ons-page>
+                <ons-list>
+                    <ons-list-item ng-click="splitter.load('login.html')" tappable>
+                        主页
+                    </ons-list-item>
+                    <ons-list-item ng-click="splitter.load('settings.html')" tappable>
+                        设置
+                    </ons-list-item>
+                    <ons-list-item ng-click="splitter.load('about.html')" tappable>
+                        关于
+                    </ons-list-item>
+                </ons-list>
+            </ons-page>
+        </ons-splitter-side>
+        <ons-splitter-content page="home.html"></ons-splitter-content>
+    </ons-splitter>
+    <ons-template id="home.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="dot.left.open()">
+                        <ons-icon icon="md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    Main
+                </div>
+            </ons-toolbar>
+            <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+                Swipe right to open the menu!
+            </p>
+        </ons-page>
+    </ons-template>
+    <ons-template id="settings.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="dot.left.open()">
+                        <ons-icon icon="md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    Settings
+                </div>
+            </ons-toolbar>
+        </ons-page>
+    </ons-template>
+    <ons-template id="about.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="dot.left.open()">
+                        <ons-icon icon="md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    About
+                </div>
+            </ons-toolbar>
+        </ons-page>
+    </ons-template>
+</body>
+
+</html>
